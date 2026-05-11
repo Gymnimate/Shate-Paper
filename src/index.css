@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: var(--color-indigo-600);
+  --color-brand-light: var(--color-indigo-50);
+  --color-brand-dark: var(--color-indigo-900);
+}
+
+@layer base {
+  body {
+    @apply bg-indigo-50 dark:bg-slate-950 text-indigo-950 dark:text-indigo-50 antialiased font-sans transition-colors duration-300;
+  }
+}
+
+.dark .prose {
+  @apply text-slate-800;
+}
+
+.dark .a4-sheet .prose {
+  @apply text-slate-700;
+}
+
+.prose h1 { @apply text-4xl font-black mb-6 text-indigo-900 tracking-tight; }
+.prose h2 { @apply text-2xl font-bold mt-10 mb-4 text-indigo-950 border-b-2 border-indigo-50 pb-2 flex items-center gap-2; }
+.prose h3 { @apply text-xl font-bold mt-6 mb-2 text-indigo-900; }
+.prose p { @apply text-slate-700 leading-relaxed mb-4 font-medium; }
+.prose ul { @apply list-disc list-inside mb-4 space-y-2; }
+.prose ol { @apply list-decimal list-inside mb-4 space-y-2; }
+.prose li { @apply text-slate-700 font-medium; }
+.prose strong { @apply font-bold text-indigo-900; }
+.prose blockquote { @apply border-l-4 border-indigo-200 pl-4 py-1 italic text-indigo-600 mb-4 bg-indigo-50/50 rounded-r-lg; }
+.prose code { @apply bg-indigo-100 px-1.5 py-0.5 rounded text-sm font-mono text-indigo-600; }
+.prose table { @apply w-full border-collapse mb-6 border-2 border-indigo-50 rounded-xl overflow-hidden; }
+.prose th { @apply bg-indigo-50 p-3 text-left font-bold text-indigo-900 border-b-2 border-indigo-100; }
+.prose td { @apply p-3 border-b border-indigo-50 text-slate-700; }
+.prose tr:last-child td { @apply border-b-0; }
+
+.animate-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
